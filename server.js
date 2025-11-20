@@ -1,26 +1,20 @@
-const { createServer } = require('http')
-const { parse } = require('url')
-const next = require('next')
 
-const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'localhost'
-const port = process.env.PORT || 3000
+/* eslint-disable @typescript-eslint/no-require-imports */
+const { createServer } = require("http");
+const next = require("next");
+const { parse } = require("url");
 
-const app = next({ dev, hostname, port })
-const handle = app.getRequestHandler()
+const port = process.env.PORT || 3000;
+const dev = process.env.NODE_ENV !== "production";
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
-  createServer(async (req, res) => {
-    try {
-      const parsedUrl = parse(req.url, true)
-      await handle(req, res, parsedUrl)
-    } catch (err) {
-      console.error('Error occurred handling', req.url, err)
-      res.statusCode = 500
-      res.end('internal server error')
-    }
+  createServer((req, res) => {
+    const parsedUrl = parse(req.url, true);
+    handle(req, res, parsedUrl);
   }).listen(port, (err) => {
-    if (err) throw err
-    console.log(`> Ready on http://${hostname}:${port}`)
-  })
-})
+    if (err) throw err;
+    console.log(`> Ready on http://localhost:${port}`);
+  });
+});
