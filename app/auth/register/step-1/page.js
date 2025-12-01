@@ -127,7 +127,7 @@ export default function RegisterStep1() {
                   <input
                     type="text"
                     placeholder="Enter first name"
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 text-black"
                     {...register('firstName', { required: 'First name is required' })}
                   />
                   {errors.firstName && (
@@ -142,7 +142,7 @@ export default function RegisterStep1() {
                   <input
                     type="text"
                     placeholder="Enter last name"
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 text-black"
                     {...register('lastName', { required: 'Last name is required' })}
                   />
                   {errors.lastName && (
@@ -157,7 +157,7 @@ export default function RegisterStep1() {
                   <input
                     type="email"
                     placeholder="Enter email address"
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 text-black"
                     {...register('email', { 
                       required: 'Email address is required',
                       pattern: {
@@ -179,7 +179,7 @@ export default function RegisterStep1() {
                     type="tel"
                     placeholder="08012345678"
                     maxLength={11}
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 text-black"
                     {...register('phoneNumber', { 
                       required: 'Phone number is required',
                       pattern: {
@@ -200,7 +200,7 @@ export default function RegisterStep1() {
                   <input
                     type="text"
                     placeholder="(Optional)"
-                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 text-black"
                     {...register('referral')}
                   />
                 </div>

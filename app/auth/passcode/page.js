@@ -133,7 +133,7 @@ export default function PasscodePage() {
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-4 rounded-xl bg-white border border-gray-200 focus:border-[#0a59d0] focus:ring-2 focus:ring-[#0a59d0]/20 outline-none transition-all duration-200"
+                  className="w-full px-4 py-4 rounded-xl bg-white border border-gray-200 focus:border-[#0a59d0] focus:ring-2 focus:ring-[#0a59d0]/20 outline-none transition-all duration-200 text-black"
                   autoFocus
                 />
                 <button

@@ -163,20 +163,6 @@ export default function DashboardHome() {
       route: "cable", 
       gradient: "from-purple-500 to-purple-600"
     },
-    { 
-      icon: "🎓", 
-      label: "Education", 
-      description: "Result Checker",
-      route: "education", 
-      gradient: "from-cyan-500 to-blue-500"
-    },
-    { 
-      icon: "🆔", 
-      label: "Verification", 
-      description: "BVN & NIN",
-      route: "verification", 
-      gradient: "from-red-500 to-pink-500"
-    },
   ]
 
   const copyToClipboard = async (text, type) => {
@@ -524,6 +510,7 @@ export default function DashboardHome() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {services.map((service, index) => (
               <button
+                onClick={() => router.push(`/dashboard/${service.route}`)}
                 key={index}
                 className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-300 hover:-translate-y-2 overflow-hidden"
               >

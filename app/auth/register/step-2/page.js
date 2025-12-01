@@ -215,7 +215,7 @@ function RegisterStep2Content() {
                       type={passwordVisible ? "text" : "password"}
                       placeholder="4 digits PIN"
                       maxLength={4}
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12"
+                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12 text-black"
                       {...register('pin', {
                         required: 'Transaction PIN is required',
                         pattern: {
@@ -246,7 +246,7 @@ function RegisterStep2Content() {
                     <input
                       type={passwordVisible ? "text" : "password"}
                       placeholder="Password"
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12"
+                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12 text-black"
                       {...register('password', {
                         required: 'Password is required'
                       })}
@@ -270,7 +270,7 @@ function RegisterStep2Content() {
                     <input
                       type={passwordVisible ? "text" : "password"}
                       placeholder="Confirm Password"
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12"
+                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12 text-black"
                       {...register('confirmPassword', {
                         required: 'Please confirm your password'
                       })}

@@ -211,7 +211,7 @@ export default function LoginPage() {
                     <input
                       type="email"
                       placeholder="Enter Email"
-                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200"
+                      className="w-full pl-12 pr-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 text-black"
                       {...register('email', {
                         required: 'Email is required',
                         pattern: {
@@ -235,7 +235,7 @@ export default function LoginPage() {
                     <input
                       type={passwordVisible ? "text" : "password"}
                       placeholder="Enter Password"
-                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12"
+                      className="w-full px-4 py-3 rounded-lg bg-white/90 border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all duration-200 pr-12 text-black"
                       {...register('password', {
                         required: 'Password is required',
                         minLength: {
@@ -289,7 +289,7 @@ export default function LoginPage() {
                   Don't have an Account?{' '}
                 </span>
                 <Link 
-                  href="/auth/register" 
+                  href="/auth/register/step-1" 
                   className="text-white text-lg font-black hover:underline transition-colors duration-200"
                 >
                   sign up
