@@ -54,6 +54,8 @@ export default function DataPinPage() {
     }
   }
 
+  console.log('datas token:', token)
+
   const datas = {
     email: email,
     token: token,

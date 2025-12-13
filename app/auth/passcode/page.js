@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth'
 import { app } from '@/lib/firebase'
 import { storage } from '@/lib/storage'
-import { getStoredEmail, clearSession, sendTokenToBackend } from '@/lib/sessionManager'
+import { getStoredEmail, clearSession } from '@/lib/sessionManager'
 
 export default function PasscodePage() {
   const router = useRouter()
@@ -66,8 +66,6 @@ export default function PasscodePage() {
       const auth = getAuth(app)
       await signInWithEmailAndPassword(auth, email, password)
 
-      // Send token to backend
-      await sendTokenToBackend(email)
 
       // Navigate to dashboard
       router.replace('/dashboard')

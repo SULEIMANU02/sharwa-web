@@ -188,12 +188,6 @@ export default function SuccessPage() {
           // Success state buttons
           <>
             <button
-              onClick={handleBuyAgain}
-              className="w-full bg-white border-2 border-blue-600 text-blue-600 font-semibold py-4 rounded-xl hover:bg-blue-50 active:scale-95 transition-all duration-200 shadow-sm"
-            >
-              Buy Again
-            </button>
-            <button
               onClick={handleViewHistory}
               className="w-full bg-white border-2 border-gray-300 text-gray-700 font-semibold py-4 rounded-xl hover:bg-gray-50 active:scale-95 transition-all duration-200 shadow-sm"
             >
