@@ -44,7 +44,7 @@ export default function BankListScreen() {
   }
 
   const handleBankSelect = (bank) => {
-    router.push(`/transfer?bank=${encodeURIComponent(bank.name)}&code=${encodeURIComponent(bank.code)}`)
+    router.push(`/dashboard/transfer?bank=${encodeURIComponent(bank.name)}&code=${encodeURIComponent(bank.code)}`)
   }
 
   return (

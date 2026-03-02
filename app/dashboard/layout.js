@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }) {
   // Get page title based on current path
   const getPageTitle = () => {
     if (pathname?.includes('/history')) return 'Transaction History'
-    if (pathname?.includes('/settings')) return 'Account Settings'
+    if (pathname?.includes('/profile')) return 'Profile'
     if (pathname?.includes('/dashboard')) return 'Dashboard'
     return 'sharwadata'
   }
@@ -31,7 +31,7 @@ export default function DashboardLayout({ children }) {
   // Get page description based on current path
   const getPageDescription = () => {
     if (pathname?.includes('/history')) return 'View and manage your transaction history'
-    if (pathname?.includes('/settings')) return 'Manage your account preferences'
+    if (pathname?.includes('/profile')) return 'Manage your account profile'
     if (pathname?.includes('/dashboard')) return ''
     return ''
   }
@@ -85,11 +85,11 @@ export default function DashboardLayout({ children }) {
                       <span className="font-medium">Transaction History</span>
                     </a>
                     <a
-                      href="/dashboard/settings"
+                      href="/dashboard/profile"
                       className="flex items-center space-x-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
                     >
                       <span className="text-lg">⚙️</span>
-                      <span className="font-medium">Settings</span>
+                      <span className="font-medium">Profile</span>
                     </a>
                   </nav>
                 </div>
@@ -140,14 +140,14 @@ export default function DashboardLayout({ children }) {
                       History
                     </a>
                     <a
-                      href="/dashboard/settings"
+                      href="/dashboard/profile"
                       className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                        pathname?.includes('/settings') 
+                        pathname?.includes('/profile') 
                           ? 'bg-white text-blue-600 shadow-sm' 
                           : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
-                      Settings
+                      Profile
                     </a>
                   </nav>
                   

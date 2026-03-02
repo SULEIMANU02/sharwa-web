@@ -73,7 +73,7 @@ export default function Transfer() {
       const totalWithCurrentTransfer = dailyTransferSum + numericAmount
       setExceedsLimit(totalWithCurrentTransfer > dailyLimit)
     }
-  })
+  }, [bank, code, recipientAccount.length, validated, amount, exceedsLimit, balance, numericAmount, level, dailyTransferSum, bankCode, selectedBank])
 
   const fetchData = async () => {
     try {
@@ -187,7 +187,7 @@ export default function Transfer() {
   }
 
   const handleProceed = () => {
-    router.push(`/transfer-pin?bank=${selectedBank}&code=${bankCode}&account=${recipientAccount}&amount=${numericAmount}&beneficiary=${beneficiary}&narration=${narration}`)
+    router.push(`/dashboard/transfer/pin?bank=${encodeURIComponent(selectedBank || '')}&code=${encodeURIComponent(bankCode || '')}&account=${encodeURIComponent(recipientAccount || '')}&amount=${encodeURIComponent(numericAmount || 0)}&beneficiary=${encodeURIComponent(beneficiary || '')}&narration=${encodeURIComponent(narration || '')}`)
   }
 
   const formatAmount = (text) => {

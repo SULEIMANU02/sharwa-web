@@ -12,6 +12,7 @@ export default function DashboardNav() {
     { href: '/dashboard/cable', label: 'Cable' },
     { href: '/dashboard/nepa', label: 'NEPA' },
     { href: '/dashboard/transfer', label: 'Transfer' },
+    { href: '/dashboard/fund', label: 'Fund Wallet' },
     { href: '/dashboard/verification', label: 'Verification' },
     { href: '/dashboard/history', label: 'History' },
     { href: '/dashboard/profile', label: 'Profile' },

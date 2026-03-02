@@ -153,7 +153,7 @@ export default function DashboardHome() {
       icon: "⚡", 
       label: "Electricity", 
       description: "Pay Bills",
-      route: "electricity", 
+      route: "nepa", 
       gradient: "from-yellow-500 to-orange-500"
     },
     { 
@@ -547,7 +547,10 @@ export default function DashboardHome() {
                   <p className="text-purple-100 text-sm">Our dedicated support team is available 24/7 to help you</p>
                 </div>
               </div>
-              <button className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold hover:bg-purple-50 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 whitespace-nowrap">
+              <button
+                onClick={() => router.push('/dashboard/support')}
+                className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-bold hover:bg-purple-50 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105 whitespace-nowrap"
+              >
                 Contact Support
               </button>
             </div>
