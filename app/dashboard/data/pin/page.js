@@ -14,27 +14,12 @@ export default function DataPinPage() {
   const type = searchParams.get('type')
   const amount = searchParams.get('amount')
   const plan = searchParams.get('plan')
-  const username = searchParams.get('username')
 
   const [passcode, setPasscode] = useState('')
-  const [token, setToken] = useState('')
-  const [email, setEmail] = useState('')
   const [pin, setPin] = useState('')
   const [loading, setLoading] = useState(false)
-  const [networks, setNetworks] = useState('')
-
-  // Map network codes
-  useEffect(() => {
-    if (network === '0') {
-      setNetworks('1')
-    } else if (network === '1') {
-      setNetworks('4')
-    } else if (network === '2') {
-      setNetworks('2')
-    } else {
-      setNetworks('3')
-    }
-  }, [network])
+  const networkMap = { '0': 1, '1': 4, '2': 2, '3': 3 }
+  const networkCode = networkMap[network] ?? 3
 
   useEffect(() => {
     getData()
@@ -43,35 +28,37 @@ export default function DataPinPage() {
   const getData = async () => {
     try {
       const savedPin = localStorage.getItem('pin')
-      const codeToken = localStorage.getItem('token')
-      const saveEmail = localStorage.getItem('email')
-      
       if (savedPin) setPin(savedPin)
-      if (codeToken) setToken(codeToken)
-      if (saveEmail) setEmail(saveEmail)
     } catch (error) {
       console.error('Error fetching data:', error)
     }
-  }
-
-  console.log('datas token:', token)
-
-  const datas = {
-    email: email,
-    token: token,
-    network: networks, 
-    number: phone,
-    planid: planId, 
-    plan: plan,
-    amount: amount,
-    datatype: type,
-    Ported_number: true,
   }
 
   const checkDb = async () => {
     setLoading(true)
     
     try {
+      const storedToken = localStorage.getItem('token') || ''
+      const storedEmail = localStorage.getItem('email') || ''
+
+      if (!storedToken || !storedEmail) {
+        await handleLogout()
+        return
+      }
+
+      const datas = {
+        email: storedEmail,
+        token: storedToken,
+        network: networkCode,
+        number: phone,
+        planid: planId,
+        plan: plan,
+        amount: Number(amount),
+        datatype: type,
+        Ported_number: true,
+        expo_token: 'nill'
+      }
+
       const response = await fetch('https://sharwadata.com.ng/purchase/data', {
         method: 'POST',
         headers: {
@@ -84,7 +71,7 @@ export default function DataPinPage() {
       console.log('Purchase result:', result)
 
       if (result.success) {
-        router.push(`/dashboard/success?network=${networks}&phone=${phone}&success=success&type=data&datatype=${type}&amount=${amount}&plan=${encodeURIComponent(plan)}&time=${new Date().getTime()}`)
+        router.push(`/dashboard/success?network=${networkCode}&phone=${phone}&success=success&type=data&datatype=${type}&amount=${amount}&plan=${encodeURIComponent(plan)}&time=${new Date().getTime()}`)
       } else {
         if (result.error === 'invalid_token') {
           // Handle session expiry
@@ -92,7 +79,7 @@ export default function DataPinPage() {
         } else if (result.error === 'insufficient_balance') {
           alert('Insufficient Balance. Kindly fund your wallet to continue.')
         } else {
-          router.push(`/dashboard/success?network=${networks}&phone=${phone}&success=failed&type=data&datatype=${type}&amount=${amount}&plan=${encodeURIComponent(plan)}&time=${new Date().getTime()}`)
+          router.push(`/dashboard/success?network=${networkCode}&phone=${phone}&success=failed&type=data&datatype=${type}&amount=${amount}&plan=${encodeURIComponent(plan)}&time=${new Date().getTime()}`)
         }
       }
     } catch (error) {
