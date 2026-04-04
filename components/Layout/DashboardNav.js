@@ -18,6 +18,7 @@ export default function DashboardNav() {
     { href: '/dashboard/profile', label: 'Profile' },
     { href: '/dashboard/support', label: 'Support' },
     { href: '/dashboard/upgrade', label: 'Upgrade' },
+    { href: '/dashboard/settings', label: 'Settings' },
   ]
   return (
     <nav className="flex flex-wrap gap-2 text-sm">

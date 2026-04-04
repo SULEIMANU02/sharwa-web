@@ -22,6 +22,7 @@ export default function DashboardLayout({ children }) {
 
   // Get page title based on current path
   const getPageTitle = () => {
+    if (pathname?.includes('/settings')) return 'Account Settings'
     if (pathname?.includes('/history')) return 'Transaction History'
     if (pathname?.includes('/profile')) return 'Profile'
     if (pathname?.includes('/dashboard')) return 'Dashboard'
@@ -30,6 +31,7 @@ export default function DashboardLayout({ children }) {
 
   // Get page description based on current path
   const getPageDescription = () => {
+    if (pathname?.includes('/settings')) return 'Manage API access and preferences'
     if (pathname?.includes('/history')) return 'View and manage your transaction history'
     if (pathname?.includes('/profile')) return 'Manage your account profile'
     if (pathname?.includes('/dashboard')) return ''
