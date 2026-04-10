@@ -199,7 +199,6 @@ export default function SettingsPage() {
         <div className="bg-white rounded-2xl shadow-lg p-6 space-y-3">
           <h3 className="text-lg font-semibold text-gray-800">Actions</h3>
           <div className="space-y-3">
-            {canViewDocs && (
               <button
                 onClick={handleOpenApiDocs}
                 className="w-full flex items-center justify-between p-4 hover:bg-gray-50 rounded-xl transition-colors group border border-transparent"
@@ -215,7 +214,6 @@ export default function SettingsPage() {
                 </div>
                 <ChevronRightIcon className="h-5 w-5 text-gray-400 group-hover:text-gray-600" />
               </button>
-            )}
 
             {canViewKey && (
               <button
